@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  db:
+    restart: always
+    image: 'postgres:alpine'
+    environment:
+      - POSTGRES_USER=dsk
+      - POSTGRES_PASSWORD=deeppas
+      - POSTGRES_DB=synquotes
+      - PORT = 5432
+    volumes:
+      - data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  data:
+
